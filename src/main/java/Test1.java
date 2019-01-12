@@ -25,7 +25,7 @@ public class Test1 {
         for (String string : list) {
             if (string.contains("a")) {
                 //return true;
-                //System.out.println(string);
+                System.out.println(string);
             }
         }
 
@@ -36,6 +36,11 @@ public class Test1 {
         });
 
         Stream<String> filtered = list.stream().filter(element-> element.contains("d"));
+
+
+        boolean isValid = list.stream().anyMatch(element -> element.contains("h")); // true
+        boolean isValidOne = list.stream().allMatch(element -> element.contains("h")); // false
+        boolean isValidTwo = list.stream().noneMatch(element -> element.contains("h")); // false
 
     }
 
